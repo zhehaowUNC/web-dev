@@ -78,6 +78,7 @@ nav{
     width:235px;
     display:inline-block;
 }
+	
 	.album{
 		font-size: 14px;
 		margin-left: -68px;
@@ -97,7 +98,8 @@ nav{
 	.play{
 		display: inline-block;
 		position: relative;
-		top: 4px;
+		top: -3px;
+		left:-10px;
 		visibility: hidden;
 
 	}
@@ -155,7 +157,7 @@ nav{
 			font-size: 1.7em;
 		}
 		#progress{
-		width:180px;} 
+		width:184px;} 
 		#time{
 		font-size: 10px;position: relative;right: -80px;top: 4px;
 	}
@@ -185,7 +187,7 @@ nav{
 			font-size: 1.7em;
 		}
 		#progress{
-		width:170px;}
+		width:173px;}
 		#time{
 		font-size: 10px;position: relative;right: -70px;top: 4px;
 	} 
@@ -196,7 +198,7 @@ nav{
 			font-size: 15px;
 			position: relative;
 			top:-13px;
-			left:0.5px;
+			left:-0.5px;
 
 		}
 		#buttons .red{
@@ -229,7 +231,7 @@ nav{
 			font-size: 15px;
 			position: relative;
 			top:-13px;
-			left:0.5px;
+			left:0px;
 
 		}
 		#buttons .red{
@@ -256,7 +258,7 @@ nav{
 			
 		}
 		#progress{
-		width:120px; 
+		width:114px; 
 	}
 	#time{
 		font-size: 10px;position: relative;right: -48px;top: 4px;
@@ -267,6 +269,26 @@ nav{
 	.red{
 		float:left;
 	}
+	#circle{
+	width: 10px;
+	height: 10px;
+	position: relative;
+	top: 22px;
+	left: -1px;
+	}
+	
+	#bar{
+		display:flex;width: 0px; height: 4px; background-color: #424242;position: relative;top: 15px;left: -1px;
+	}
+	#progress{
+		height: 4px; background-color: #9e9e9e;margin-top: 11px;border-radius: 6px;
+	}
+	#myInput{
+		height: 50px;
+		margin-bottom: 20px;
+		font-color:grey;
+	}
+
 </style>
 </head>
 <body>
@@ -275,7 +297,7 @@ nav{
  <nav>
     <div class="nav-wrapper" style="clear:both;">
     <a href="http:www.github.com" style="float:right; margin-top:1px;">
-    <img src="g.jpg" style="margin-right:10px;width : 100px; margin-top:9px;float:right;"></a>	
+    <img src="icons/g.jpg" style="margin-right:10px;width : 100px; margin-top:9px;float:right;"></a>	
     <a href="index.html" style="margin-top: 9px; margin-left:18px;float: left; ">Home</a>
      
     </div>
@@ -286,45 +308,47 @@ nav{
    <div id = "image" class="container-fluid bg" style="height : 370px; " >
    </div>
    <div id="name">
-   	<img src="masiwei.jpg" class = "circle responsive-img center" style="height: 180px;margin-top: -320px">
-   	<p style="margin-top: -8px">Ma Siwei</p>
+   	<img src="avatar/masiwei.jpg" class = "circle responsive-img center" style="height: 180px;margin-top: -320px">
+   	<p class = "artist"style="margin-top: -8px">Ma Siwei</p>
    	</div>
-   	<p style="text-align: center; position: relative;top: -35px"><a href ="http://www.weibo.com/skipbeatz"><img src="xinlang.png" class="icon" style="margin-right: 20px" ></a><a href = "https://www.instagram.com/accounts/login/?next=/masiwei1993/"><img src="ins.png" class="icon" ></a></p>
+   	<p style="text-align: center; position: relative;top: -35px"><a href ="http://www.weibo.com/skipbeatz"><img src="icons/xinlang.png" class="icon" style="margin-right: 20px" ></a><a href = "https://www.instagram.com/accounts/login/?next=/masiwei1993/"><img src="icons/ins.png" class="icon " ></a></p>
    	<div class="row">
    		<div class="container"><h2 >Tracks</h2></div>
+
    		<div style="margin-left: 10px">
-   			<div class="container">
-   		<div class="col s12 m6 songs waves-effect" style="height: 90px">
-   			
+   			<div class="container"><div class="col s12">
+   		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by typing in track or album names.."></div>
+   		<div class="col s12 m6 songs waves-effect" style="height: 90px"onclick="music(this)">
+   			<audio class="myAudio"><source src="tracks/masiwei/07.Love Me(Prod.Skip).mp3" type="audio/mpeg"></audio>
    		    
-   			<img class = "circle" src="pei.jpg">
+   			<img class = "circle" src="albumcover/PEI cover.jpg">
    			<div class="row">
    			<div class="col s7" style="margin-left: 80px; margin-top: -33px" > 
-   			<span class = "songname">Na Na <i class="material-icons play" >play_arrow</i></span>
-   			<span style="position: relative; left: 79px; top: -45px; width: 200px"class = "album"  >Album: P.E.I Mixtape Vol.3</span>
+   			<span class = "songname">Love Me</span>
+   			<span style="position: relative; left: 79px; top: -45px; width: 200px"class = "album"  >Album: P.E.I Mixtape Vol.1</span>
    		</div>
    	</div>
    	</div>
-   	<a href="lsds.mp3">
-   	<div class="col s12 m6 songs waves-effect" style="height: 90px;">
-   			
+
+   	<div class="col s12 m6 songs waves-effect" style="height: 90px;" onclick="music(this);">
+   			<audio class="myAudio"><source src="tracks/masiwei/崂山道士.mp3" type="audio/mpeg"></audio>
    		    
-   			<img class = "circle" src="pei2.jpg">
+   			<img class = "circle" src="albumcover/P.E.I Mixtape Vol.2.jpg">
    			<div class="row">
    			<div class="col s7" style="margin-left: 80px; margin-top: -33px;" > 
-   			<span class = "songname">崂山道士 <i class="material-icons play" >play_arrow</i></span>
+   			<span class = "songname">崂山道士 (Taoist Priest of Lao-Shan)</span>
    			<span style="position: relative; left: 79px; top: -45px; width: 200px"class = "album"  >Album: P.E.I Mixtape Vol.2</span>
    		</div>
    	</div>
-   	</div></a>
-   	<div class="col s12 m6 songs waves-effect" style="height: 90px; margin-bottom: 130px ">
-   			
+   	</div>
+   	<div class="col s12 m6 songs waves-effect" style="height: 90px; margin-bottom: 130px " onclick="music(this)">
+   			<audio class="myAudio"><source src="tracks/masiwei/08.Flava In Ya Ear Remix (Prod.Skip) .mp3" type="audio/mpeg"></audio>
    		    
-   			<img class = "circle" src="pei.jpg">
+   			<img class = "circle" src="albumcover/PEI cover.jpg">
    			<div class="row">
    			<div class="col s5" style="margin-left: 80px; margin-top: -33px" > 
-   			<span class = "songname">Na Na <i class="material-icons play" >play_arrow</i></span>
-   			<span style="position: relative; left: 79px; top: -45px; width: 200px"class = "album"  >Album: P.E.I Mixtape Vol.3</span>
+   			<span class = "songname">Flava In Ya Ear Remix</span>
+   			<span style="position: relative; left: 79px; top: -45px; width: 200px"class = "album"  >Album: P.E.I Mixtape Vol.1</span>
    		</div>
    	</div>
    	</div>
@@ -336,31 +360,33 @@ nav{
    	</div>
 </div>
 </div>
-<div class="container">
-	<div id = "player" class="col s12 waves-effect" style="z-index: 10;">
+<div id="playercontainer"class="container" style="visibility:hidden;opacity: 0;">
+	<div id = "player" class="col s12 waves-effect" style="z-index: 3;">
 		<div class="row">
 		<div class="col s7" >	
-		<img class = "playercover"src="pei2.jpg" style="margin-right: 10px;" >
+		<img class = "playercover"src="albumcover/P.E.I Mixtape Vol.2.jpg" style="margin-right: 10px;" >
 		<div id = "currentsongname"style=" font-family: Roboto;overflow:hidden;
 	text-overflow:ellipsis;
-	white-space:nowrap;font-weight: bold;">崂山道士</div>
+	white-space:nowrap;font-weight: bold;text-align: center;">崂山道士</div>
 		<div id="currentsongartist"style=" font-family: Roboto;overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;">Ma Siwei</div>
 	</div>
-
+ 
 		
-		
+	
 		<div id = "buttons" class="col s5"  >
-			<div id="circle" style="width: 11px; height: 11px; background-color: black;border-radius: 50%;position: relative;top: 22.5px"></div>
+			
+			<div id="circle" style="display:flex; background-color: black;border-radius: 50%; z-index: 5" class="waves-effect" ></div>
+				<div id="bar" class=" waves-effect"></div>
+			<div id="progress">
+				<div id="time"  >0:00</div>
 
-			<div id="progress" style="height: 4px; background-color: #9e9e9e;margin-top: 15px;border-radius: 6px">
-				<div id="time" >0:00</div>
 			</div>
 			<div style="text-align: center;">
-		<a class="btn-floating btn-large waves-effect waves-light red rewind"><i class="material-icons " style="">fast_rewind</i></a>
-		 <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" style="">play_arrow</i></a>
-		<a class="btn-floating btn-large waves-effect waves-light red fast" ><i class="material-icons"style="">fast_forward</i></a>
+		<a class="btn-floating btn-large waves-effect waves-light red rewind"onclick="prevsong()"><i class="material-icons " style="">fast_rewind</i></a>
+		 <a id="play"class="btn-floating btn-large waves-effect waves-light red play_arrow"><i class="material-icons playbtn" style="" onclick="turnstatus()">play_arrow</i></a>
+		<a class="btn-floating btn-large waves-effect waves-light red fast" onclick="nextsong()"><i class="material-icons"style="">fast_forward</i></a>
 	</div>
 	
 </div>
@@ -374,11 +400,9 @@ nav{
 
 
 
- <script>
-function showplay(event){
-	var
+ <script src="js/script.js">
 
-}
+
 </script>
 </body>
 <html>
